@@ -69,7 +69,7 @@ func (p *Parser) classDeclaration() (Stmt, error) {
 	if p.match(LeftParenTT) {
 		p.consume(IdentifierTT, "Expect superclass name.")
 		superclass = NewVariable(p.previous()).(*Variable)
-		p.consume(RightParenTT, "Expect superclass name.")
+		p.consume(RightParenTT, "Expect ')' after superclass name.")
 	}
 	_, err = p.consume(ColonTT, "Expect ':' after class name.")
 	if err != nil {
