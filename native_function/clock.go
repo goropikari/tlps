@@ -19,7 +19,7 @@ func (cf *ClockFunc) Arity() int {
 
 // Call return now unix time
 func (cf *ClockFunc) Call(arguments []interface{}) (interface{}, error) {
-	return float64(time.Now().Unix()), nil
+	return float64(time.Now().UnixMilli()) / 1000.0, nil
 }
 
 func (cf *ClockFunc) String() string {
